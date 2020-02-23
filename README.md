@@ -10,7 +10,6 @@ Water of protein structure is removed and the format of the protein and ligand s
 
 You can convert the PDB file of protein and the mol2 file of ligand into individual PDBQT files in two ways.
 
-
 Enter the structure file of the protein and ligand to be converted as arguments. 
 ```
 python prepare.py -m 0 -p ./data/complexes/10gs_protein.pdb -l ./data/complexes/10gs_ligand.mol2 
@@ -25,17 +24,21 @@ python prepare.py -h
 ```
 
 ### 2. (optionally) Convert to mol2  
-BAPA는 mol2 file formate의 protein structure을 이용하기 때문에 PDB formate의 파일을 chimera을 이용하여 변환한다. 만약 당신이 이미 protein의 mol2 file을 가지고 있다면 이 과정을 skip해도 되지만 chimera을 이용하여 변환된 파일을 사용하는 것을 추천한다.
+The protein structure of PDB format is converted to mol2 format using [UCSF Chimera](https://en.wikipedia.org/wiki/UCSF_Chimera). If you already have the mol2 file of protein, you can skip this step, but we recommend using the file converted with UCSF Chimera.
 
-변환은 `get_mol2.ipynb` notebook을 이용하면되고 structure 파일이 저장되어 있는 dir을 다음과 같이 path로 잡아주면된다.
+Convert using `get_mol2.ipynb` notbook. Specify `dir' where the structure file is saved as follows.
 ```
+df
 ```
 
-### 3. 
+### 3. Get Vina terms
+BAPA는 
 
-### 4. 
+### 4. Get interaction descriptions
+BAPA는 
 
 # Predict
+위의 4가지 step을 Protein-ligand complex의 binding affinity을 예측할 수 있는 trained network가 포함되어 있다. 
 
 # Train
 
