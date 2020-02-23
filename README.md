@@ -27,7 +27,7 @@ The protein structure of PDB format is converted to mol2 format using [UCSF Chim
 
 Convert using `convert_to_mol2.ipynb` notbook. Specify `dir' where the structure file is saved as follows.
 ```
-df
+path = "./data/complexes"
 ```
 
 ### 3. Get Vina terms
