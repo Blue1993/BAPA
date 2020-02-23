@@ -7,11 +7,19 @@ The network was trained with PDBbind databased and tested with CASF and CSAR "sc
 # Prepare complexes
 
 ### 1. (optionally) Remove water and convert to PDBQT
-이 단계에서는 protein structure와 ligand structure에서 물을 제거하고 [open babel](http://openbabel.org/wiki/Main_Page)을 이용하여 각각의 PDBQT파일을 생성한다.  
-만약 당신이 이미 물이 제거된 상태의 protein과 ligand의 PDBQT파일을 가지고 있다면 이 단계는 실행하지 않고 넘어가도 된다.   
+In this step, water of protein structure and ligand structure is removed and converted into each [PDBQT](http://autodock.scripps.edu/faqs-help/faq/what-is-the-format-of-a-pdbqt-file) file using [open babel](http://openbabel.org/wiki/Main_Page).  
+The format of protein structure is [PDB](https://en.wikipedia.org/wiki/Protein_Data_Bank_(file_format)) and the format of ligand structure is [mol2](http://chemyang.ccnu.edu.cn/ccb/server/AIMMS/mol2.pdf).  
+If you already have a PDBQT file of protein and ligand with water removed, you can skip this step.  
+
+You can convert the PDB file of protein and the mol2 file of ligand into individual PDBQT files in 2 ways with the -m option:
+1. 변환하려는 protein과 ligand의 structure 파일을 다음과 같이 인자의 형태로 넘겨준다.
+'''
+python prepare.py -m 0 -p ./data/complexes/10gs_protein.pdb -l ./data/complexes/10gs_ligand.mol2 
+'''
+
+2. 
 
 
-If you want to run on one complex (for each protein and ligand structure).
 ### 2. (optionally)
 
 ### 3. 
