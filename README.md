@@ -4,7 +4,10 @@ The network was trained with PDBbind databased and tested with CASF and CSAR "sc
 
 # Requrements
 
+# Prepare complexes
+
+# Predict
+
+# Train
+
 # References
-
-
-
