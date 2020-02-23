@@ -10,11 +10,11 @@ Water of protein structure is removed and the format of the protein and ligand s
 
 You can convert the PDB file of protein and the mol2 file of ligand into individual PDBQT files in two ways.
 
-Enter the structure file of the protein and ligand to be converted as arguments. 
+Input the structure file of the protein and ligand to be converted. 
 ```
 python prepare.py -m 0 -p ./data/complexes/10gs_protein.pdb -l ./data/complexes/10gs_ligand.mol2 
 ```
-Or, enter as argument the file containing the path of the structure file of the protein and ligand to be converted.  
+Or, input the file containing the path of the structure file of the protein and ligand to be converted.  
 ```
 python prepare.py -m 1 -f input_file_list.txt
 ```
@@ -42,23 +42,14 @@ python prepare.py -h
 ### 4. Get occurrence of descriptors
 Calculate the number of occurrences of each descriptor within the given complex using the mol2 structure of the protein and ligand. Distance threshold and the number of descriptors is fixed at 12Å, 2,500, respectively. The Result of `get_descriptor_occurrence.py` script is saved in binary file format. 
 
+Input the structure file of the protein and ligand.
 ```
 python get_descriptor_occurrence.py -m 1 -p ./data/complexes/10gs_protein.mol2 -l ./data/complexes/10gs_ligand.mol2 -o ./data/dataset/test_data.pkl
 ```
-
+Or, input the file containing the path of the structure file of the protein and ligand.
 ```
-실행코드
+python get_descriptor_occurrence.py -m 1 -f for_descriptors_occurrence_list.txt
 ```
-
-Enter the structure file of the protein and ligand to be converted as arguments. 
-```
-python prepare.py -m 0 -p ./data/complexes/10gs_protein.pdb -l ./data/complexes/10gs_ligand.mol2 
-```
-Or, enter as argument the file containing the path of the structure file of the protein and ligand to be converted.  
-```
-python prepare.py -m 1 -f input_file_list.txt
-```
-
 For more details,
 ```
 python get_descriptor_occurrence.py -h
@@ -77,14 +68,14 @@ python get_descriptor_occurrence.py -h
 
 For more details,
 ```
-python prepare.py -h
+python predict.py -h
 ```
 
 # Train
 
 For more details,
 ```
-python prepare.py -h
+python training.py -h
 ```
 
 # References
