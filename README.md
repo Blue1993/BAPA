@@ -32,14 +32,59 @@ df
 ```
 
 ### 3. Get Vina terms
-BAPA는 
+Five intermolecular Vina terms and one flexible Vina terms are calculated using the protein and ligand structure in the PDBQT format. The network predicts the binding affinity using six Vina terms and the number of occurrences of each descriptor.
 
-### 4. Get interaction descriptions
-BAPA는 
+For more details,
+```
+python prepare.py -h
+```
+
+### 4. Get occurrence of descriptors
+Calculate the number of occurrences of each descriptor within the given complex using the mol2 structure of the protein and ligand. Distance threshold and the number of descriptors is fixed at 12Å, 2,500, respectively. The Result of `get_descriptor_occurrence.py` script is saved in binary file format. 
+
+```
+python get_descriptor_occurrence.py -m 1 -p ./data/complexes/10gs_protein.mol2 -l ./data/complexes/10gs_ligand.mol2 -o ./data/dataset/test_data.pkl
+```
+
+```
+실행코드
+```
+
+Enter the structure file of the protein and ligand to be converted as arguments. 
+```
+python prepare.py -m 0 -p ./data/complexes/10gs_protein.pdb -l ./data/complexes/10gs_ligand.mol2 
+```
+Or, enter as argument the file containing the path of the structure file of the protein and ligand to be converted.  
+```
+python prepare.py -m 1 -f input_file_list.txt
+```
+
+For more details,
+```
+python get_descriptor_occurrence.py -h
+```
 
 # Predict
 위의 4가지 step을 Protein-ligand complex의 binding affinity을 예측할 수 있는 trained network가 포함되어 있다. 
+```
+실행 코드
+```
+
+```
+실행 결과
+```
+
+
+For more details,
+```
+python prepare.py -h
+```
 
 # Train
+
+For more details,
+```
+python prepare.py -h
+```
 
 # References
