@@ -11,11 +11,11 @@ In this step, water of protein structure and ligand structure is removed and con
 The format of protein structure is [PDB](https://en.wikipedia.org/wiki/Protein_Data_Bank_(file_format)) and the format of ligand structure is [mol2](http://chemyang.ccnu.edu.cn/ccb/server/AIMMS/mol2.pdf).  
 If you already have a PDBQT file of protein and ligand with water removed, you can skip this step.  
 
-You can convert the PDB file of protein and the mol2 file of ligand into individual PDBQT files in 2 ways with the -m option:
+You can convert the PDB file of protein and the mol2 file of ligand into individual PDBQT files in 2 ways with the -m option:  
 1. 변환하려는 protein과 ligand의 structure 파일을 다음과 같이 인자의 형태로 넘겨준다.  
-'''
+```
 python prepare.py -m 0 -p ./data/complexes/10gs_protein.pdb -l ./data/complexes/10gs_ligand.mol2 
-'''
+```
 
 2. 
 
