@@ -65,7 +65,7 @@ python get_descriptors_occurrence_count.py -h
 # Predict
 When Vina terms and the number of occurence of descriptors are ready, you can predcit the binding affinity using the BAPA.
 ```
-python predict.py -d ./data/dataset/test_data.pkl -v ./data/dataset/test_Vina.pkl -o ./result/result.csv
+python predict.py -d ./data/dataset/test_data.pkl -t ./data/dataset/test_Vina.pkl -o ./result/result.csv
 ```
 The result of `predict.py` consists of the following forms:
 ```
@@ -80,6 +80,14 @@ python predict.py -h
 ```
 
 # Train
+
+```
+python training.py -d ./ -t ./ -o ./
+```
+
+```
+python training.py -d ./ -t ./ -o ./ -v ./
+```
 
 For more details,
 ```
