@@ -25,17 +25,25 @@ python convert_to_PDBQT.py -h
 ### 2. (optionally) Convert to mol2  
 The protein structure of PDB format is converted to mol2 format using [UCSF Chimera](https://en.wikipedia.org/wiki/UCSF_Chimera). If you already have the mol2 file of protein, you can skip this step, but we recommend using the file converted with UCSF Chimera.
 
-Convert using `convert_to_mol2.ipynb` notbook. Specify `dir' where the structure file is saved as follows.
+Convert using `convert_to_mol2.ipynb` notbook. Specify `dir` where the structure file is saved as follows.
 ```
 path = "./data/complexes"
 ```
 
 ### 3. Get Vina terms
-Five intermolecular Vina terms and one flexible Vina terms are calculated using the protein and ligand structure in the PDBQT format. The network predicts the binding affinity using six Vina terms and the number of occurrences of each descriptor.
+Five intermolecular Vina terms and one flexible Vina terms are calculated using the protein and ligand structure in the PDBQT format. The Vina terms used in the proposed method are calculated using a [git repository](https://github.com/HongjianLi/RF-Score) that implements rf-score v3. The network predicts the binding affinity using six Vina terms and the number of occurrences of each descriptor.
 
+Input the structure file of the protein and ligand.
+```
+python get_Vina_terms.py - m 0 -p ./data/complexes/10gs_protein.pdbqt -l ./data/complexes/10gs_ligand.pdbqt -o ./data/dataset/test_Vina_terms.pkl
+```
+Or, input the file containing the path of the structure file of the protein and ligand.
+```
+python get_Vina_terms.py - m 1 -f ./input_list_Vina.txt -o ./data/dataset/test_Vina_terms.pkl
+```
 For more details,
 ```
-python prepare.py -h
+python get_Vina_terms.py -h
 ```
 
 ### 4. Get occurrence of descriptors
