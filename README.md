@@ -25,13 +25,15 @@ python convert_to_PDBQT.py -h
 ### 2. (optionally) Convert to mol2  
 The protein structure of PDB format is converted to mol2 format using [UCSF Chimera](https://en.wikipedia.org/wiki/UCSF_Chimera). If you already have the mol2 file of protein, you can skip this step, but we recommend using the file converted with UCSF Chimera.
 
-Convert using `convert_to_mol2.ipynb` notbook. Specify `dir` where the structure file is saved as follows.
+To convert a PDB file to mol2 file, use `convert_to_mol2.ipynb` notbook. 
+
+If you wnat to change the `Dir`, change the path in `convert_to_mol2.ipynb` notebook as follows:
 ```
 path = "./data/complexes"
 ```
 
 ### 3. Get Vina terms
-Five intermolecular Vina terms and one flexible Vina terms are calculated using the protein and ligand structure in the PDBQT format. The Vina terms used in the proposed method are calculated using a [git repository](https://github.com/HongjianLi/RF-Score) that implements rf-score v3. The network predicts the binding affinity using six Vina terms and the number of occurrences of each descriptor.
+Five intermolecular Vina terms and one flexible Vina term are calculated using the protein and ligand structure in the PDBQT format. The Vina terms used in the proposed method are calculated using a [git repository](https://github.com/HongjianLi/RF-Score) that implements rf-score v3. The network predicts the binding affinity using six Vina terms and the number of occurrences of each descriptor.
 
 Input the structure file of the protein and ligand.
 ```
