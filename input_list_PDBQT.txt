@@ -1,0 +1,3 @@
+protein	ligand
+./data/complexes/10gs_protein.pdb	./data/complexes/10gs_ligand.mol2
+./data/complexes/2hzy_protein.pdb	./data/complexes/2hzy_ligand.mol2
