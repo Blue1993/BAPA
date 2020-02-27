@@ -35,6 +35,11 @@ path = "./data/complexes"
 ### 3. Get Vina terms
 Five intermolecular Vina terms and one flexible Vina term are calculated using the protein and ligand structure in the PDBQT format. The Vina terms used in the proposed method are calculated using a [git repository](https://github.com/HongjianLi/RF-Score) that implements rf-score v3. The network predicts the binding affinity using six Vina terms and the number of occurrences of each descriptor.
 
+Download the following git repository to your `BAPA` Dir.
+```
+~/BAPA$ git clone https://github.com/HongjianLi/RF-Score.git
+```
+
 Input the file containing the path of the structure file of the protein and ligand.
 ```
 python get_Vina_terms.py -i input_list_Vina_terms.txt -o ./data/dataset/Vina_terms.pkl
