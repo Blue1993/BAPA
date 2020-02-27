@@ -1,0 +1,2 @@
+protein	ligand
+./data/complexes/10gs_protein.pdbqt	./data/complexes/10gs_ligand.pdbqt

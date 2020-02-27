@@ -1,0 +1,2 @@
+protein	ligand
+./data/complexes/10gs_protein.mol2	./data/complexes/10gs_ligand.mol2
