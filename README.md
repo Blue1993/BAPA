@@ -13,7 +13,7 @@ UCSF Chimera
 ### 1. Remove water and convert to PDBQT
 Water of protein structure should be removed and the format of the protein and ligand structure should be converted to [PDBQT](http://autodock.scripps.edu/faqs-help/faq/what-is-the-format-of-a-pdbqt-file) using [open babel](http://openbabel.org/wiki/Main_Page). The format of protein structure is [PDB](https://en.wikipedia.org/wiki/Protein_Data_Bank_(file_format)) and the format of ligand structure is [mol2](http://chemyang.ccnu.edu.cn/ccb/server/AIMMS/mol2.pdf). 
 
-Input the file containing the path of the structure file of the protein and ligand to be converted. 
+Please input the file containing the path of the structure file of the protein and ligand to be converted. 
 ```
 python convert_to_PDBQT.py -i input_list_PDBQT.txt -o ./data/complexes
 ```
@@ -35,7 +35,7 @@ path = "./data/complexes"
 ### 3. Get Vina terms
 Five intermolecular Vina terms and one flexible Vina term should be calculated using the protein and ligand structure in the PDBQT format. The Vina terms used in the proposed method were calculated using a [git repository](https://github.com/HongjianLi/RF-Score) that implements rf-score v3. The network predicts the binding affinity using six Vina terms and the number of occurrences of each descriptor.
 
-Download the following git repository to your `BAPA` Dir.
+You can download the following git repository to your `BAPA` Dir.
 ```
 ~/BAPA$ git clone https://github.com/HongjianLi/RF-Score.git
 ```
@@ -79,7 +79,7 @@ python predict.py -h
 ```
 
 # Train
-In order to train the model, label information is required, so the `dataset.pkl` file created for prediction needs to be regenerated as follows.
+The label information is needed for training the model. You can generate `dataset.pkl` file as follows.
 ```
 python get_descriptors_occurrence_count.py -i input_list_count_train.txt -o ./data/dataset/dataset.pkl
 ```
