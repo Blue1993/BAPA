@@ -1,5 +1,5 @@
 # BAPA
-BAPA is a neural network for predicting binding affinity of protein-ligand complexes. The network was trained with PDBbind databased and tested with CASF and CSAR "scoring power" benchmark.
+BAPA is a convolutional neural network model for predicting binding affinity of protein-ligand complexes. The network was trained with PDBbind databased and tested with CASF and CSAR "scoring power" benchmark datasets. The related paper is now under revision for Bioinformatics.
 
 # Requirements
 python 3.6.8  
@@ -11,7 +11,7 @@ UCSF Chimera
 
 # Prepare complexes
 ### 1. Remove water and convert to PDBQT
-Water of protein structure is removed and the format of the protein and ligand structure is converted to [PDBQT](http://autodock.scripps.edu/faqs-help/faq/what-is-the-format-of-a-pdbqt-file) using [open babel](http://openbabel.org/wiki/Main_Page). The format of protein structure is [PDB](https://en.wikipedia.org/wiki/Protein_Data_Bank_(file_format)) and the format of ligand structure is [mol2](http://chemyang.ccnu.edu.cn/ccb/server/AIMMS/mol2.pdf). 
+Water of protein structure should be removed and the format of the protein and ligand structure should be converted to [PDBQT](http://autodock.scripps.edu/faqs-help/faq/what-is-the-format-of-a-pdbqt-file) using [open babel](http://openbabel.org/wiki/Main_Page). The format of protein structure is [PDB](https://en.wikipedia.org/wiki/Protein_Data_Bank_(file_format)) and the format of ligand structure is [mol2](http://chemyang.ccnu.edu.cn/ccb/server/AIMMS/mol2.pdf). 
 
 Input the file containing the path of the structure file of the protein and ligand to be converted. 
 ```
@@ -23,7 +23,7 @@ python convert_to_PDBQT.py -h
 ```
 
 ### 2. Convert to mol2  
-The protein structure of PDB format is converted to mol2 format using [UCSF Chimera](https://en.wikipedia.org/wiki/UCSF_Chimera). If you already have the mol2 file of protein, you can skip this step, but we recommend using the file converted with UCSF Chimera.
+The protein structure of PDB format should be converted to mol2 format using [UCSF Chimera](https://en.wikipedia.org/wiki/UCSF_Chimera). If you already have the mol2 file of protein, you can skip this step, but we recommend using the file converted with UCSF Chimera.
 
 To convert a PDB file to mol2 file, use `convert_to_mol2.ipynb` notbook. 
 
@@ -33,14 +33,14 @@ path = "./data/complexes"
 ```
 
 ### 3. Get Vina terms
-Five intermolecular Vina terms and one flexible Vina term are calculated using the protein and ligand structure in the PDBQT format. The Vina terms used in the proposed method are calculated using a [git repository](https://github.com/HongjianLi/RF-Score) that implements rf-score v3. The network predicts the binding affinity using six Vina terms and the number of occurrences of each descriptor.
+Five intermolecular Vina terms and one flexible Vina term should be calculated using the protein and ligand structure in the PDBQT format. The Vina terms used in the proposed method were calculated using a [git repository](https://github.com/HongjianLi/RF-Score) that implements rf-score v3. The network predicts the binding affinity using six Vina terms and the number of occurrences of each descriptor.
 
 Download the following git repository to your `BAPA` Dir.
 ```
 ~/BAPA$ git clone https://github.com/HongjianLi/RF-Score.git
 ```
 
-Input the file containing the path of the structure file of the protein and ligand.
+Please input the file containing the path of the structure file for protein and ligand, as below.
 ```
 python get_Vina_terms.py -i input_list_Vina_terms.txt -o ./data/dataset/Vina_terms.pkl
 ```
@@ -50,9 +50,9 @@ python get_Vina_terms.py -h
 ```
 
 ### 4. Get occurrence of descriptors
-Calculate the number of occurrences of each descriptor within the given complex using the mol2 structure of the protein and ligand. Distance threshold and the number of descriptors is fixed at 12Å, 2,500, respectively. The Result of `get_descriptors_occurrence_count.py` script is saved in binary file format. 
+Please calculate the number of occurrences of each descriptor within the given complex using the mol2 structure of the protein and ligand. Distance threshold and the number of descriptors is fixed at 12Å, 2,500, respectively. The Result of `get_descriptors_occurrence_count.py` script is saved in binary file format. 
 
-Input the file containing the path of the structure file of the protein and ligand.
+Please input the file containing the path of the structure file of the protein and ligand.
 ```
 python get_descriptors_occurrence_count.py -i input_list_count.txt -o ./data/dataset/dataset.pkl
 ```
@@ -85,7 +85,7 @@ python get_descriptors_occurrence_count.py -i input_list_count_train.txt -o ./da
 ```
 The `input_list_count_train.txt` file should contain the label information in the last tab.
 
-When all preparation is complete, you can train the BAPA model as follows:
+When all the files are prepared, you can train the BAPA model as follows:
 ```
 python training.py -d ./data/dataset/dataset.pkl -v ./data/dataset/Vina_terms.pkl -s ./module/train_network 
 ```
