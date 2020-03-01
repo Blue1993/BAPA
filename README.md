@@ -87,7 +87,7 @@ The `input_list_count_train.txt` file should contain the label information in th
 
 When all the files are prepared, you can train the BAPA model as follows:
 ```
-python training.py -d ./data/dataset/dataset.pkl -v ./data/dataset/Vina_terms.pkl -s ./module/train_network 
+python training.py -d ./data/dataset/dataset.pkl -v ./data/dataset/Vina_terms.pkl -s ./module/trained_network 
 ```
 
 For more details,
