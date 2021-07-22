@@ -1,5 +1,5 @@
 # BAPA
-BAPA is a convolutional neural network model for predicting binding affinity of protein-ligand complexes. The network was trained with PDBbind databased and tested with CASF and CSAR "scoring power" benchmark datasets. The related paper is now under revision for Bioinformatics.
+BAPA is a convolutional neural network model for predicting binding affinity of protein-ligand complexes. The network was trained with PDBbind databased and tested with CASF and CSAR "scoring power" benchmark datasets. The related paper is submitted for BMC Bioinformatics.
 
 # Requirements
 python 3.6.8  
